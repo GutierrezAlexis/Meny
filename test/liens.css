@@ -1,0 +1,38 @@
+﻿#lien {position:absolute;
+		top:20px;
+		left:0px; 
+		width:170px;
+		height:500px;
+		background:#666;
+		border-right:#fff 8px double;
+	   }
+	   
+#lien a img { width:0;
+            height:0;
+			border-width:0;
+			 }
+			 
+#lien a { display:line;
+		 width:200px;
+		 border-right:#fff 8px double;
+		 background:#444;
+	   }
+	   
+a:link { color#fff;
+        font-size:1em;
+		}
+		   
+a:hover { color:#f0f;}
+
+#lien a:hover img{position::absolute;
+				top:150px;
+				left:80px;
+				width:400px;
+				height:300px;}
+			
+#contenue{position:absolute;
+          top:28;
+		  left:171px;
+		  width:600;
+		  border:#fff 8px double;
+		  }

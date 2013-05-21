@@ -1,0 +1,90 @@
+﻿<html>
+	<head>
+		<title>Option d'impression</title>
+		<script type="text/javascript" language="JavaScript">
+			var nbpage=(Math.floor(Math.random()*100)+1);
+			
+			function impression() {
+			 				
+				var message;
+				message = "Option d'impression: \n";
+			
+				if (option.ordinaire.checked && option.chkrectoverso.checked) {
+					message += "Vous devez cliquer juste une des deux options \n";
+				}else{
+					if (option.couleur.checked){
+						message += "Avec couleur \n";
+					}
+					if (option.rectoverso.checked){
+						message += "Recto Verso \n";
+					}
+					if (option.ordinaire.checked) {
+						message += "Ordinaire \n";
+					} 
+				}
+				
+		   window.alert (message);	
+			}
+			
+			function imprimante(){
+				if (document.impression.toutPages[0].checked ) {
+				var npd = 1;
+				var npf = nbpage;
+				var pImp = nbpage;
+				}else if (npd <=0 || npd >= npf || npf < npd || npf > nbpage){
+			document.write (document.impression.toutPages[1].checked + npd + npf);
+				window.alert ("Erreur");
+				}
+				else
+				{ 
+				var npd = impression.pageDebut.value;
+				var npf = impression.pageFin.value;
+				var pImp =   npf - npd;
+				}
+				var nb = "";
+					for(var i = npd; i<= npf; i++) {
+					
+						nb += i + " ";
+					}
+				 window.alert ("Impression des pages " + nb + "\n Nombre de pages imprimées " + pImp);	
+				}
+				 
+		
+			
+			
+		</script>
+	</head>
+	<body>
+	<form name="impression">
+		<table width="250" align="center" cellspacing="2" border="2" summary="Liste des vlos selon le nouveau catalogue 2012">
+			
+				<tr>
+					<td><p align="center">Nombre de page dans le document:
+					<script type="text/javascript" language="JavaScript"> document.write(nbpage); </script><br />
+						 Vous désirer imprimer:</p></td>
+				</tr>
+				<tr>
+					<td><input type="radio" name="toutPages" checked >Toutes les pages</td>
+				</tr>
+				<tr>	
+					<td><input type="radio" name="toutPages">Pages <input type="text" name="pageDebut" size="4" maxlength="3"> à <input type="text" name="pageFin" size="4" maxlength="3"></td>
+				</tr>
+				<tr>
+					<td align="center"><input  type="button" name="bouton" value="Pages à imprimer" onClick="imprimante()"></td>
+				</tr>
+			
+		</table>
+	</form>
+		<form name="option">
+			<p align="center"> <br />
+			<h1>Option d'impression : </h1>
+			<input type="checkbox" name="couleur">Impression en couleur<br />
+			<input type="checkbox" name="rectoverso">Impression Recto Verso<br />
+			<input type="checkbox" name="ordinaire" checked>Impression Ordinnaire<br />
+			<input type="button" name="bouton" value="Résumer les préfénces" onClick="impression()">
+			<br /><br />
+			</p>
+		</form>
+	
+	</body>
+</html>

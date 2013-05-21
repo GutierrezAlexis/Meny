@@ -1,0 +1,87 @@
+﻿<html>
+	<head>
+		<title>Option d'impression</title>
+		<script type="text/javascript" language="JavaScript">
+			
+			function choixdimpression() {
+			 
+			 					
+				var message;
+				message = "Option d'impression: \n";
+			
+				
+				if (option.chkordinaire.checked && option.chkrectoverso.checked) {
+					message += "Vous devez cliquer juste une des deux options \n";
+				}else{
+					if (option.chkcouleur.checked){
+						message += "Avec couleur \n";
+					}
+					if (option.chkrectoverso.checked){
+						message += "Recto Verso \n";
+					}
+					if (option.chkordinaire.checked) {
+						message += "Ordinaire \n";
+					} 
+				}
+				
+		   window.alert (message);	
+			}
+			
+			function choixdimpression() {
+			 
+			 					
+				var message;
+				message = "Impresion des pages \n";
+			
+				
+				if (impression.chkordinaire.checked && option.chkrectoverso.checked) {
+					message += "Vous devez cliquer juste une des deux options \n";
+				}else{
+					if (option.chkcouleur.checked){
+						message += "Avec couleur \n";
+					}
+					if (option.chkrectoverso.checked){
+						message += "Recto Verso \n";
+					}
+					if (option.chkordinaire.checked) {
+						message += "Ordinaire \n";
+					} 
+				}
+				
+		   window.alert (message);	
+			}
+
+		</script>
+	</head>
+	<body>
+<table width="390" align="center" cellspacing="2" border="2" summary="Liste des vlos selon le nouveau catalogue 2012">
+	<form name="impression">
+		<tr>
+			<td>Nombre de page dans le document:
+			<script type="text/javascript" language="JavaScript">var nbpage=(Math.floor(Math.random()*100)+1); document.write (nbpage); </script><br />
+				 Vous désirer imprimer:</td>
+		</tr>
+		<tr>
+			<td><input type="radio" name="toutPages">Toutes les pages</td>
+		</tr>
+		<tr>	
+			<td><input type="radio" name="page">Pages <input type="text" name="pageDebut" maxlength="3"> à <input type="text" name="pageFin" maxlength="3"></td>
+		</tr>
+		<tr>
+			<td align="center"><input  type="button" name="bouton" value="Pages à imprimer" onClick="choixdimpression()"></td>
+		</tr>
+	</form>
+</table>
+		<form name="option">
+			<p align="center"> <br />
+			Option d'impression : <br /><br />
+			<input type="checkbox" name="chkcouleur">Impression en couleur<br />
+			<input type="checkbox" name="chkrectoverso">Impression Recto Verso<br />
+			<input type="checkbox" name="chkordinaire" >Impression Ordinnaire<br />
+			<input type="button" name="bouton" value="Résumer les préférences" onClick="choixdimpression()">
+			<br /><br />
+			</p>
+		</form>
+	
+	</body>
+</html>
